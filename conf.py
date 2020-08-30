@@ -21,7 +21,7 @@ import sys
 
 import jinja2
 import pandas
-from numpydoc.docscrape import NumpyDocString
+# from numpydoc.docscrape import NumpyDocString
 
 project = 'ibook'
 copyright = '2020, lbk'
@@ -434,7 +434,8 @@ class PandasAutosummary(Autosummary):
             obj, parent, modname = _import_by_name(real_name)
         except ImportError:
             return False
-        doc = NumpyDocString(obj.__doc__ or "")
+        # doc = NumpyDocString(obj.__doc__ or "")
+        doc = ''
         summary = "".join(doc["Summary"] + doc["Extended Summary"])
         return ".. deprecated::" in summary
 
@@ -491,16 +492,16 @@ def linkcode_resolve(domain, info):
     else:
         linespec = ""
 
-    fn = os.path.relpath(fn, start=os.path.dirname(pandas.__file__))
-
-    if "+" in pandas.__version__:
-        return f"https://github.com/pandas-dev/pandas/blob/master/pandas/{fn}{linespec}"
-    else:
-        return (
-            f"https://github.com/pandas-dev/pandas/blob/"
-            f"v{pandas.__version__}/pandas/{fn}{linespec}"
-        )
-
+    # fn = os.path.relpath(fn, start=os.path.dirname(pandas.__file__))
+    #
+    # if "+" in pandas.__version__:
+    #     return f"https://github.com/pandas-dev/pandas/blob/master/pandas/{fn}{linespec}"
+    # else:
+    #     return (
+    #         f"https://github.com/pandas-dev/pandas/blob/"
+    #         f"v{pandas.__version__}/pandas/{fn}{linespec}"
+    #     )
+    return ''
 
 # remove the docstring of the flags attribute (inherited from numpy ndarray)
 # because these give doc build errors (see GH issue 5331)
