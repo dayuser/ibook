@@ -9,6 +9,10 @@
 Installation
 ------------
 
+
+:ref:`install Scrapy <qw>`
+
+
 .. raw:: html
 
     <div class="container">

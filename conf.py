@@ -10,8 +10,6 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
 # sys.path.insert(0, os.path.abspath('ibook'))
 
 
@@ -31,7 +29,6 @@ author = 'lbk'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
-
 # version = '%s r%s' % (pandas.__version__, svn_version())
 
 # The full version, including alpha/beta/rc tags.
@@ -46,6 +43,8 @@ release = '0.1'
 #
 #               ]
 extensions = [
+    'hoverxref.extension',
+    'notfound.extension',
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.doctest",
@@ -60,9 +59,23 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.ifconfig",
     "sphinx.ext.linkcode",
+    # 'sphinx.ext.viewcode',
     # "nbsphinx",
     # "contributors",  # custom pandas extension
 ]
+# Options for sphinx-hoverxref options
+# ------------------------------------
+
+# hoverxref_auto_ref = True
+
+hoverxref_role_types = {
+    "class": "tooltip",
+    "confval": "tooltip",
+    "hoverxref": "tooltip",
+    "mod": "tooltip",
+    "ref": "tooltip",
+}
+# hoverxref_roles = ['command', 'reqmeta', 'setting', 'signal']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -79,6 +92,7 @@ language = 'zh_CN'
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# pygments_style = 'sphinx'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -558,14 +572,20 @@ def rstjinja(app, docname, source):
     rendered = app.builder.templates.render_string(src, app.config.html_context)
     source[0] = rendered
 
-
+def maybe_skip_member(app, what, name, obj, skip, options):
+    if not skip:
+        # autodocs was generating a text "alias of" for the following members
+        # https://github.com/sphinx-doc/sphinx/issues/4422
+        return name in {'default_item_class', 'default_selector_class'}
+    return skip
 def setup(app):
+    app.connect('autodoc-skip-member', maybe_skip_member)
     app.connect("source-read", rstjinja)
-    app.connect("autodoc-process-docstring", remove_flags_docstring)
-    app.connect("autodoc-process-docstring", process_class_docstrings)
-    app.add_autodocumenter(AccessorDocumenter)
-    app.add_autodocumenter(AccessorAttributeDocumenter)
-    app.add_autodocumenter(AccessorMethodDocumenter)
-    app.add_autodocumenter(AccessorCallableDocumenter)
-    app.add_directive("autosummary", PandasAutosummary)
+    # app.connect("autodoc-process-docstring", remove_flags_docstring)
+    # app.connect("autodoc-process-docstring", process_class_docstrings)
+    # app.add_autodocumenter(AccessorDocumenter)
+    # app.add_autodocumenter(AccessorAttributeDocumenter)
+    # app.add_autodocumenter(AccessorMethodDocumenter)
+    # app.add_autodocumenter(AccessorCallableDocumenter)
+    # app.add_directive("autosummary", PandasAutosummary)
 

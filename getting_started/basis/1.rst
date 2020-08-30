@@ -1,0 +1,10 @@
+.. _10min_tut_01_tableoriented:
+
+{{ header }}
+
+
+What kind of data does pandas handle?
+=====================================
+
+:ref:`install Scrapy <qw>`
+
