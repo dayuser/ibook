@@ -1,0 +1,104 @@
+:notoc:
+
+.. ibook documentation master file, created by
+
+.. module:: ibook
+
+********************
+ibook
+********************
+
+**时间**: |today| **版本**: |release|
+
+**链接**:
+`Binary Installers <https://pypi.org/project/pandas>`__ |
+`Source Repository <https://github.com/pandas-dev/pandas>`__ |
+`Issues & Ideas <https://github.com/pandas-dev/pandas/issues>`__ |
+`Q&A Support <https://stackoverflow.com/questions/tagged/pandas>`__ |
+`Mailing List <https://groups.google.com/forum/#!forum/pydata>`__
+
+:mod:`ibook` 成长中
+
+.. raw:: html
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
+                <div class="card text-center intro-card shadow">
+                <img src="_static/index_getting_started.svg" class="card-img-top" alt="getting started with pandas action icon" height="52">
+                <div class="card-body flex-fill">
+                    <h5 class="card-title">入门指南</h5>
+                    <p class="card-text">查看入门指南。它们包含对ibook的主要概念的介绍，以及指向其他教程的链接。</p>
+
+.. container:: custom-button
+
+    :ref:`入门指南<getting_started>`
+
+.. raw:: html
+
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
+                <div class="card text-center intro-card shadow">
+                <img src="_static/index_user_guide.svg" class="card-img-top" alt="pandas user guide action icon" height="52">
+                <div class="card-body flex-fill">
+                    <h5 class="card-title">用户指南</h5>
+                    <p class="card-text">用户指南提供了有关ibook关键概念的深入信息，并提供了有用的背景信息和说明。</p>
+
+.. container:: custom-button
+
+    :ref:`用户指南<user_guide>`
+
+.. raw:: html
+
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
+                <div class="card text-center intro-card shadow">
+                <img src="_static/index_api.svg" class="card-img-top" alt="api of pandas action icon" height="52">
+                <div class="card-body flex-fill">
+                    <h5 class="card-title">参考文档</h5>
+                    <p class="card-text">该参考指南包含有关ibook的详细说明。</p>
+
+.. container:: custom-button
+
+    :ref:`参考指南<api>`
+
+.. raw:: html
+
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
+                <div class="card text-center intro-card shadow">
+                <img src="_static/index_contribute.svg" class="card-img-top" alt="contribute to pandas action icon" height="52">
+                <div class="card-body flex-fill">
+                    <h5 class="card-title">开发人员指南</h5>
+                    <p class="card-text">在文档中是否要改善现有功能？指导原则将指导您完成ibook的改良过程。</p>
+
+.. container:: custom-button
+
+    :ref:`开发人员指南<development>`
+
+.. raw:: html
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+.. toctree::
+    :maxdepth: 3
+    :hidden:
+    :titlesonly:
+
+
+    入门指南<getting_started/index>
+    用户指南<user_guide/index>
+    参考<reference/index>
+    开发指南<development/index>
+    更新内容<whatsnew/index>

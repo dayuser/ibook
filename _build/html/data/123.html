@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>入门 &#8212; ibook 0.1 文档</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/getting_started.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pandas.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">入门指南</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">用户指南</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../reference/index.html">参考</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../development/index.html">开发指南</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../whatsnew/index.html">更新内容</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id2" class="nav-link">设置文档来源</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id3" class="nav-link">定义文件结构</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id20" class="nav-link">添加内容</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id25" class="nav-link">运行构建</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id30" class="nav-link">记录对象</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id35" class="nav-link">基本配置</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id42" class="nav-link">自动档</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id55" class="nav-link">狮身人面像</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id68" class="nav-link">更多主题将涉及</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="id1">
+<h1>入门<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Sphinx是*文档生成器*或翻译一组普通文本的工具
+将文本源文件转换成各种输出格式，自动生成
+交叉引用，索引等。也就是说，如果您的目录包含
+一堆：doc：<cite>/ usage / restructuredtext / index`或：doc：</cite>/ usage / markdown`
+Sphinx可以生成一系列HTML文件，PDF文件（通过LaTeX），
+手册页等等。</p>
+<p>Sphinx专注于文档，特别是手写文档，
+但是，Sphinx也可以用于生成博客，主页甚至书籍。
+Sphinx的强大功能主要来自其默认纯文本标记的丰富性
+格式：：doc：<cite>reStructuredText &lt;/ usage / restructuredtext / index&gt;</cite>，以及
+它是doc：<cite>显着的可扩展性&lt;/ development / index&gt;</cite>。</p>
+<p>本文档的目的是让您快速了解什么是Sphinx，以及
+您如何使用它。完成这里的操作后，您可以查看
+：doc：<cite>安装指南&lt;/ usage / installation&gt;</cite>，然后是简介
+Sphinx使用的默认标记格式，reStucturedText
+&lt;/ usage / restructedtext / index&gt;`。</p>
+<p>有关一般编写文档的绝佳“介绍”-原因和方式，请参见
+还有“写文档” __，由Eric Holscher编写。</p>
+<div class="section" id="id2">
+<h2>设置文档来源<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>Sphinx集合的纯文本文档源的根目录是
+称为：term：<cite>source directory</cite>。该目录还包含Sphinx
+配置文件：conf.py，您可以在其中配置如何
+Sphinx会阅读您的资源并建立您的文档。[＃] _</p>
+<p>Sphinx随附一个名为：program：<cite>sphinx-quickstart`的脚本，用于设置
+源目录并创建默认的：file：`conf.py</cite>，其中最有用
+它会询问您一些问题的配置值。要使用此功能，请运行：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sphinx-quickstart
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>定义文件结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>假设您已经运行了：program：<cite>sphinx-quickstart</cite>。它创建了一个源
+目录中包含conf.py文件和一个主文档index.rst的文件。的
+主文档的主要功能是用作欢迎页面，并且
+包含“目录树”（或* toctree <a href="#id4"><span class="problematic" id="id5">*</span></a>）的根。这是一
+Sphinx添加到reStructuredText中的主要内容，这是一种连接方式
+将多个文件合并为一个文档层次结构。</p>
+<div class="sidebar">
+<p class="sidebar-title">reStructuredText指令</p>
+<p><a href="#id6"><span class="problematic" id="id7">``</span></a>toctree``是一个reStructuredText：dfn：<cite>directive</cite>，用途非常广泛
+的标记。指令可以具有参数，选项和内容。</p>
+<p><a href="#id8"><span class="problematic" id="id9">*</span></a>参数*在双冒号后直接给出
+指令的名称。每个指令都决定是否可以有参数，并且
+多少。</p>
+<ul class="simple">
+<li><p>options <a href="#id10"><span class="problematic" id="id11">*</span></a>在参数之后以“字段列表”的形式给出。的</p></li>
+</ul>
+<p>maxdepth是toctree指令的此类选项。</p>
+<ul class="simple">
+<li><p>Content <a href="#id12"><span class="problematic" id="id13">*</span></a>在空白行之后的选项或参数后面。每</p></li>
+</ul>
+<p>指令决定是否允许内容以及如何处理。</p>
+<p>带有指令的常见陷阱是**内容的第一行必须
+缩进到与选项相同的级别**。</p>
+</div>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a>toctree’’指令最初为空，如下所示：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.. toctree ::
+   ：最大深度：2
+</pre></div>
+</div>
+<p>您可以在指令的* content <a href="#id16"><span class="problematic" id="id17">*</span></a>中添加列出它们的文档：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.. toctree ::
+   ：最大深度：2
+
+   使用/安装
+   使用/快速启动
+   ...
+</pre></div>
+</div>
+<p>这正是本文档中“ toctree”的外观。的
+要包含的文档以：term：<cite>document name`s的形式给出，简而言之
+表示您不使用文件扩展名，而是使用正斜杠
+（`</cite>/<a href="#id18"><span class="problematic" id="id19">``</span></a>）作为目录分隔符。</p>
+<p><a href="#id69"><span class="problematic" id="id70">|更多|</span></a> 了解有关toctree指令&lt;toctree-directive&gt;`的更多信息。</p>
+<p>现在，您可以创建在“ toctree”中列出的文件并添加内容，然后
+他们的章节标题将被插入（最大深度）
+放置“ toctree”指令的位置。而且，Sphinx现在知道
+文档的顺序和层次。（它们可能包含“ toctree”
+指令本身，这意味着您可以创建深度嵌套的层次结构
+必要。）</p>
+</div>
+<div class="section" id="id20">
+<h2>添加内容<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+<p>在Sphinx源文件中，您可以使用标准的大多数功能
+术语：reStructuredText。Sphinx还添加了一些功能。
+例如，您可以以可移植的方式添加跨文件引用（有效
+（对于所有输出类型），使用：rst：role：<a href="#id21"><span class="problematic" id="id22">`</span></a>ref`角色。</p>
+<p>例如，如果您正在查看HTML版本，则可以查看源
+对于本文档，请使用侧栏中的“显示源代码”链接。</p>
+<p><a href="#id71"><span class="problematic" id="id72">|更多|</span></a> 请参阅：doc：<a href="#id23"><span class="problematic" id="id24">`</span></a>/ usage / restructedtext / index`了解更多信息
+reStructuredText简介，包括Sphinx添加的标记。</p>
+</div>
+<div class="section" id="id25">
+<h2>运行构建<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h2>
+<p>现在，您已经添加了一些文件和内容，让我们首先构建
+文档。用：program：<a href="#id26"><span class="problematic" id="id27">`</span></a>sphinx-build`程序开始构建：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sphinx-build -b html sourcedir builddir
+</pre></div>
+</div>
+<p>其中* sourcedir <em>是：term：`source目录`，而</em> builddir <a href="#id28"><span class="problematic" id="id29">*</span></a>是
+您要在其中放置构建文档的目录。
+-b &lt;sphinx-build -b&gt;`选项选择一个构建器；在这个例子中
+Sphinx将构建HTML文件。</p>
+<p><a href="#id73"><span class="problematic" id="id74">|更多|</span></a> 有关所有内容，请参见：doc：<cite>sphinx-build手册页&lt;/ man / sphinx-build&gt;</cite>
+sphinx-build支持的选项。</p>
+<p>但是，sphinx-quickstart脚本会创建一个Makefile文件和一个
+：file：<cite>make.bat</cite>，让您的生活更加轻松。这些可以通过执行
+使用生成器的名称运行：command：<cite>make</cite>。例如。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$使HTML
+</pre></div>
+</div>
+<p>这将在您选择的构建目录中构建HTML文档。执行
+不带参数的make命令，以查看可用的目标。</p>
+<p>..告诫：：如何生成PDF文档？</p>
+<blockquote>
+<div><p>make latexpdf运行LaTeX构建器：mod：`
+&lt;sphinx.builders.latex.LaTeXBuilder&gt;`并轻松调用pdfTeX
+为您的工具链。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id30">
+<h2>记录对象<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h2>
+<p>Sphinx的主要目标之一是轻松编写：dfn：<a href="#id31"><span class="problematic" id="id32">`</span></a>objects（在
+非常笼统的意义）。域是对象的集合
+属于在一起的类型，并带有创建和引用的标记
+这些对象的描述。</p>
+<p>最突出的领域是Python领域。例如，记录
+Python的内置函数``enumerate（）``，您可以将其添加到您的其中一个
+源文件。</p>
+<p>..代码块::重组文本</p>
+<blockquote>
+<div></div></blockquote>
+<p>呈现如下：</p>
+<p>指令的参数是您对象的：dfn：<cite>signature</cite>
+描述，内容就是它的文档。可以是多个签名
+给定，每个都在自己的行中。</p>
+<p>Python域也恰好是默认域，因此您不需要
+为标记加上域名前缀。</p>
+<p>..代码块::重组文本</p>
+<blockquote>
+<div><dl class="py function">
+<dt>
+<code class="sig-name descname">enumerate（sequence [，start = 0]）</code></dt>
+<dd><p>…</p>
+</dd></dl>
+
+</div></blockquote>
+<p>如果您保留默认域的默认设置，则会执行相同的工作。</p>
+<p>还有其他一些指令可用于记录其他类型的Python
+对象，例如：rst：dir：<cite>py：class`或：rst：dir：`py：method</cite>。有
+以及这些对象类型中的每种的交叉引用：dfn：<cite>role</cite>。这个
+标记将创建指向enumerate（）文档的链接。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>枚举：py：func：`可以用于...
+</pre></div>
+</div>
+<p>这是证明：指向：func：<a href="#id33"><span class="problematic" id="id34">`</span></a>enumerate`的链接。</p>
+<p>同样，如果Python域是默认域，则可以忽略py:。它
+哪个文件包含实际文档无关紧要
+<code class="docutils literal notranslate"><span class="pre">enumerate（）</span></code>; Sphinx将找到它并创建一个链接。</p>
+<p>每个域对于签名的外观都有特殊的规则，并且
+使格式化的输出看起来很漂亮，或添加特定功能，例如链接到
+参数类型，例如在C / C ++域中。</p>
+<p><a href="#id75"><span class="problematic" id="id76">|更多|</span></a> 有关所有可用域，请参见：文档：/ usage / restructuredtext / domains
+及其指令/角色。</p>
+</div>
+<div class="section" id="id35">
+<h2>基本配置<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h2>
+<p>前面我们提到了：file：<a href="#id36"><span class="problematic" id="id37">`</span></a>conf.py`文件控制Sphinx的方式
+处理您的文件。在该文件中，该文件作为Python源执行
+文件，您分配配置值。对于高级用户：因为它是
+由Sphinx执行，您可以在其中执行非平凡的任务，例如扩展
+：data：<a href="#id38"><span class="problematic" id="id39">`</span></a>sys.path`或导入模块以找出您要使用的版本
+记录。</p>
+<p>您可能要更改的配置值已经放入
+：file：<cite>conf.py`由：program：`sphinx-quickstart`最初注释掉
+（使用标准Python语法：＃注释该行的其余部分）。至
+更改默认值，删除哈希符号并修改值。至
+自定义不会自动添加的配置值
+：program：`sphinx-quickstart</cite>，只需添加其他任务即可。</p>
+<p>请记住，该文件使用Python语法表示字符串，数字，列表和
+以此类推。默认情况下，文件会保存为UTF-8，如编码所示
+第一行中的声明。</p>
+<p><a href="#id77"><span class="problematic" id="id78">|更多|</span></a> 请参阅：doc：<a href="#id40"><span class="problematic" id="id41">`</span></a>/ usage / configuration`以获取所有可用文档
+配置值。</p>
+</div>
+<div class="section" id="id42">
+<h2>自动档<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h2>
+<p>在记录Python代码时，通常会在其中添加大量文档
+源文件，在文档字符串中。Sphinx支持将
+扩展名来自模块的文档字符串（扩展名是Python
+为Sphinx项目提供其他功能的模块）称为* autodoc <a href="#id43"><span class="problematic" id="id44">*</span></a>。</p>
+<p>为了使用* autodoc <a href="#id45"><span class="problematic" id="id46">*</span></a>，您需要在conf.py中通过以下方式激活它：
+将字符串``’sphinx.ext.autodoc’<a href="#id47"><span class="problematic" id="id48">``</span></a>放入分配给
+：confval：<a href="#id49"><span class="problematic" id="id50">`</span></a>extensions`配置值:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">扩展名</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>然后，您可以使用一些其他指令。例如，
+记录函数``io.open（）``，读取其签名并
+来自源文件的文档字符串，您可以这样编写：:</p>
+<blockquote>
+<div><p>..自动功能：: io.open</p>
+</div></blockquote>
+<p>您还可以使用成员自动记录整个类甚至模块
+自动指令的选项，例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. automodule :: io
+   ：成员：
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>autodoc <a href="#id51"><span class="problematic" id="id52">*</span></a>需要导入您的模块以提取文档字符串。</p></li>
+</ul>
+<p>因此，您必须将适当的路径添加到您的sys.path中的：py：data：<cite>sys.path`中。
+：file：`conf.py</cite>。</p>
+<p><a href="#id79"><span class="problematic" id="id80">|更多|</span></a> 参见：mod：<a href="#id53"><span class="problematic" id="id54">`</span></a>sphinx.ext.autodoc`以获取有关的完整说明
+autodoc的功能。</p>
+</div>
+<div class="section" id="id55">
+<h2>狮身人面像<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h2>
+<p>许多Sphinx文件，包括Python文档，都发布在
+互联网。当您想要链接到您的此类文档时
+文档，您可以使用：mod：<a href="#id56"><span class="problematic" id="id57">`</span></a>sphinx.ext.intersphinx`来实现。</p>
+<p>为了使用Intersphinx，您需要在：file：<a href="#id58"><span class="problematic" id="id59">`</span></a>conf.py`中将其激活
+将字符串’sphinx.ext.intersphinx’放入扩展名`confval：<a href="#id60"><span class="problematic" id="id61">`</span></a>中
+列出并设置：confval：<a href="#id62"><span class="problematic" id="id63">`</span></a>intersphinx_mapping`配置值。</p>
+<p>例如，要链接到Python库手册中的io.open（），您需要
+设置您的：confval：<a href="#id64"><span class="problematic" id="id65">`</span></a>intersphinx_mapping`如：</p>
+<blockquote>
+<div><p>intersphinx_mapping = {‘python’：（’<a class="reference external" href="https://docs.python.org/3">https://docs.python.org/3</a>’，无）}</p>
+</div></blockquote>
+<p>现在，您可以编写一个像``：py：func：<cite>io.open```这样的交叉引用。任何
+当前文档集中没有匹配目标的交叉引用，
+将在中配置的文档集中查找
+：confval：`intersphinx_mapping`（这需要访问URL才能
+下载有效目标列表）。Intersphinx也适用于其他
+：term：`domain</cite> 的角色包括``：ref：<code class="docutils literal notranslate"><span class="pre">，但是它不适用于</span>
+<span class="pre">``：doc：</span></code>，因为这是非域角色。</p>
+<p><a href="#id81"><span class="problematic" id="id82">|更多|</span></a> 请参阅：mod：<a href="#id66"><span class="problematic" id="id67">`</span></a>sphinx.ext.intersphinx`以获取有关的完整说明
+狮身人面像的特征。</p>
+</div>
+<div class="section" id="id68">
+<h2>更多主题将涉及<a class="headerlink" href="#id68" title="永久链接至标题">¶</a></h2>
+<p>-：doc：<cite>其他扩展名&lt;/ usage / extensions / index&gt;</cite>：
+-静态文件
+-：doc：<cite>选择主题&lt;/ usage / theming&gt;</cite>
+-：doc：<cite>/用法/高级/ setuptools</cite>
+-：ref：<cite>模板化&lt;templating&gt;</cite>
+-使用扩展
+写扩展&lt;dev-extensions&gt;</p>
+<p>..专栏::脚注</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, lbk.<br/>
+        由 <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 创建。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

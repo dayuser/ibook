@@ -1,0 +1,349 @@
+===============
+入门
+===============
+
+Sphinx是*文档生成器*或翻译一组普通文本的工具
+将文本源文件转换成各种输出格式，自动生成
+交叉引用，索引等。也就是说，如果您的目录包含
+一堆：doc：`/ usage / restructuredtext / index`或：doc：`/ usage / markdown`
+Sphinx可以生成一系列HTML文件，PDF文件（通过LaTeX），
+手册页等等。
+
+Sphinx专注于文档，特别是手写文档，
+但是，Sphinx也可以用于生成博客，主页甚至书籍。
+Sphinx的强大功能主要来自其默认纯文本标记的丰富性
+格式：：doc：`reStructuredText </ usage / restructuredtext / index>`，以及
+它是doc：`显着的可扩展性</ development / index>`。
+
+本文档的目的是让您快速了解什么是Sphinx，以及
+您如何使用它。完成这里的操作后，您可以查看
+：doc：`安装指南</ usage / installation>`，然后是简介
+Sphinx使用的默认标记格式，reStucturedText
+</ usage / restructedtext / index>`。
+
+有关一般编写文档的绝佳“介绍”-原因和方式，请参见
+还有“写文档” __，由Eric Holscher编写。
+
+.. __：http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/
+
+
+设置文档来源
+------------------------------------
+
+Sphinx集合的纯文本文档源的根目录是
+称为：term：`source directory`。该目录还包含Sphinx
+配置文件：conf.py，您可以在其中配置如何
+Sphinx会阅读您的资源并建立您的文档。[＃] _
+
+Sphinx随附一个名为：program：`sphinx-quickstart`的脚本，用于设置
+源目录并创建默认的：file：`conf.py`，其中最有用
+它会询问您一些问题的配置值。要使用此功能，请运行：
+
+.. code-block:: shell
+
+   $ sphinx-quickstart
+
+
+定义文件结构
+---------------------------
+
+假设您已经运行了：program：`sphinx-quickstart`。它创建了一个源
+目录中包含conf.py文件和一个主文档index.rst的文件。的
+主文档的主要功能是用作欢迎页面，并且
+包含“目录树”（或* toctree *）的根。这是一
+Sphinx添加到reStructuredText中的主要内容，这是一种连接方式
+将多个文件合并为一个文档层次结构。
+
+.. sidebar:: reStructuredText指令
+
+   ``toctree``是一个reStructuredText：dfn：`directive`，用途非常广泛
+   的标记。指令可以具有参数，选项和内容。
+
+   *参数*在双冒号后直接给出
+   指令的名称。每个指令都决定是否可以有参数，并且
+   多少。
+
+   * options *在参数之后以“字段列表”的形式给出。的
+   maxdepth是toctree指令的此类选项。
+
+   * Content *在空白行之后的选项或参数后面。每
+   指令决定是否允许内容以及如何处理。
+
+   带有指令的常见陷阱是**内容的第一行必须
+   缩进到与选项相同的级别**。
+
+``toctree''指令最初为空，如下所示：
+
+.. code-block:: shell
+
+   .. toctree ::
+      ：最大深度：2
+
+您可以在指令的* content *中添加列出它们的文档：
+
+.. code-block:: shell
+
+   .. toctree ::
+      ：最大深度：2
+
+      使用/安装
+      使用/快速启动
+      ...
+
+这正是本文档中“ toctree”的外观。的
+要包含的文档以：term：`document name`s的形式给出，简而言之
+表示您不使用文件扩展名，而是使用正斜杠
+（``/``）作为目录分隔符。
+
+|更多| 了解有关toctree指令<toctree-directive>`的更多信息。
+
+现在，您可以创建在“ toctree”中列出的文件并添加内容，然后
+他们的章节标题将被插入（最大深度）
+放置“ toctree”指令的位置。而且，Sphinx现在知道
+文档的顺序和层次。（它们可能包含“ toctree”
+指令本身，这意味着您可以创建深度嵌套的层次结构
+必要。）
+
+
+添加内容
+--------------
+
+在Sphinx源文件中，您可以使用标准的大多数功能
+术语：reStructuredText。Sphinx还添加了一些功能。
+例如，您可以以可移植的方式添加跨文件引用（有效
+（对于所有输出类型），使用：rst：role：`ref`角色。
+
+例如，如果您正在查看HTML版本，则可以查看源
+对于本文档，请使用侧栏中的“显示源代码”链接。
+
+.. todo ::当我们在这些链接上添加新指南时，请更新以下链接。
+
+|更多| 请参阅：doc：`/ usage / restructedtext / index`了解更多信息
+reStructuredText简介，包括Sphinx添加的标记。
+
+
+运行构建
+-----------------
+
+现在，您已经添加了一些文件和内容，让我们首先构建
+文档。用：program：`sphinx-build`程序开始构建：
+
+.. code-block:: shell
+
+   $ sphinx-build -b html sourcedir builddir
+
+其中* sourcedir *是：term：`source目录`，而* builddir *是
+您要在其中放置构建文档的目录。
+-b <sphinx-build -b>`选项选择一个构建器；在这个例子中
+Sphinx将构建HTML文件。
+
+|更多| 有关所有内容，请参见：doc：`sphinx-build手册页</ man / sphinx-build>`
+sphinx-build支持的选项。
+
+但是，sphinx-quickstart脚本会创建一个Makefile文件和一个
+：file：`make.bat`，让您的生活更加轻松。这些可以通过执行
+使用生成器的名称运行：command：`make`。例如。
+
+.. code-block:: shell
+
+   $使HTML
+
+这将在您选择的构建目录中构建HTML文档。执行
+不带参数的make命令，以查看可用的目标。
+
+..告诫：：如何生成PDF文档？
+
+   make latexpdf运行LaTeX构建器：mod：`
+   <sphinx.builders.latex.LaTeXBuilder>`并轻松调用pdfTeX
+   为您的工具链。
+
+
+.. todo ::将整个部分移至有关rST或指令的指南中
+
+记录对象
+-------------------
+
+Sphinx的主要目标之一是轻松编写：dfn：`objects（在
+非常笼统的意义）。域是对象的集合
+属于在一起的类型，并带有创建和引用的标记
+这些对象的描述。
+
+最突出的领域是Python领域。例如，记录
+Python的内置函数``enumerate（）``，您可以将其添加到您的其中一个
+源文件。
+
+..代码块::重组文本
+
+   .. py：function ::列举（sequence [，start = 0]）
+
+      返回一个迭代器，该迭代器生成一个索引元组和一个
+      *序列*。（等等。）
+
+呈现如下：
+
+.. py：function ::列举（sequence [，start = 0]）
+
+   返回一个迭代器，该迭代器生成一个索引元组和一个
+   *序列*。（等等。）
+
+指令的参数是您对象的：dfn：`signature`
+描述，内容就是它的文档。可以是多个签名
+给定，每个都在自己的行中。
+
+Python域也恰好是默认域，因此您不需要
+为标记加上域名前缀。
+
+..代码块::重组文本
+
+   .. function :: enumerate（sequence [，start = 0]）
+
+      ...
+
+如果您保留默认域的默认设置，则会执行相同的工作。
+
+还有其他一些指令可用于记录其他类型的Python
+对象，例如：rst：dir：`py：class`或：rst：dir：`py：method`。有
+以及这些对象类型中的每种的交叉引用：dfn：`role`。这个
+标记将创建指向enumerate（）文档的链接。
+
+::
+
+   枚举：py：func：`可以用于...
+
+这是证明：指向：func：`enumerate`的链接。
+
+同样，如果Python域是默认域，则可以忽略py:。它
+哪个文件包含实际文档无关紧要
+``enumerate（）``; Sphinx将找到它并创建一个链接。
+
+每个域对于签名的外观都有特殊的规则，并且
+使格式化的输出看起来很漂亮，或添加特定功能，例如链接到
+参数类型，例如在C / C ++域中。
+
+|更多| 有关所有可用域，请参见：文档：/ usage / restructuredtext / domains
+及其指令/角色。
+
+
+基本配置
+-------------------
+
+前面我们提到了：file：`conf.py`文件控制Sphinx的方式
+处理您的文件。在该文件中，该文件作为Python源执行
+文件，您分配配置值。对于高级用户：因为它是
+由Sphinx执行，您可以在其中执行非平凡的任务，例如扩展
+：data：`sys.path`或导入模块以找出您要使用的版本
+记录。
+
+您可能要更改的配置值已经放入
+：file：`conf.py`由：program：`sphinx-quickstart`最初注释掉
+（使用标准Python语法：＃注释该行的其余部分）。至
+更改默认值，删除哈希符号并修改值。至
+自定义不会自动添加的配置值
+：program：`sphinx-quickstart`，只需添加其他任务即可。
+
+请记住，该文件使用Python语法表示字符串，数字，列表和
+以此类推。默认情况下，文件会保存为UTF-8，如编码所示
+第一行中的声明。
+
+|更多| 请参阅：doc：`/ usage / configuration`以获取所有可用文档
+配置值。
+
+
+.. todo ::将整个文档移到其他部分
+
+自动档
+-------
+
+在记录Python代码时，通常会在其中添加大量文档
+源文件，在文档字符串中。Sphinx支持将
+扩展名来自模块的文档字符串（扩展名是Python
+为Sphinx项目提供其他功能的模块）称为* autodoc *。
+
+为了使用* autodoc *，您需要在conf.py中通过以下方式激活它：
+将字符串``'sphinx.ext.autodoc'``放入分配给
+：confval：`extensions`配置值::
+
+   扩展名= ['sphinx.ext.autodoc']
+
+然后，您可以使用一些其他指令。例如，
+记录函数``io.open（）``，读取其签名并
+来自源文件的文档字符串，您可以这样编写：:
+
+   ..自动功能：: io.open
+
+您还可以使用成员自动记录整个类甚至模块
+自动指令的选项，例如::
+
+   .. automodule :: io
+      ：成员：
+
+* autodoc *需要导入您的模块以提取文档字符串。
+因此，您必须将适当的路径添加到您的sys.path中的：py：data：`sys.path`中。
+：file：`conf.py`。
+
+.. 警告：：
+
+   〜mod：`〜sphinx.ext.autodoc` **导入**要记录的模块。如果有的话
+   模块对导入有副作用，这些将由``autodoc''执行
+   当运行``sphinx-build''时。
+
+   如果您记录脚本（相对于库模块），请确保其脚本
+   主程序受``if __name__ =='__main__'''条件的保护。
+
+|更多| 参见：mod：`sphinx.ext.autodoc`以获取有关的完整说明
+autodoc的功能。
+
+
+.. todo ::将此文档移至另一部分
+
+狮身人面像
+-----------
+
+许多Sphinx文件，包括Python文档，都发布在
+互联网。当您想要链接到您的此类文档时
+文档，您可以使用：mod：`sphinx.ext.intersphinx`来实现。
+
+.. _Python文档：https://docs.python.org/3
+
+为了使用Intersphinx，您需要在：file：`conf.py`中将其激活
+将字符串'sphinx.ext.intersphinx'放入扩展名`confval：`中
+列出并设置：confval：`intersphinx_mapping`配置值。
+
+例如，要链接到Python库手册中的io.open（），您需要
+设置您的：confval：`intersphinx_mapping`如：
+
+   intersphinx_mapping = {'python'：（'https://docs.python.org/3'，无）}
+
+现在，您可以编写一个像``：py：func：`io.open```这样的交叉引用。任何
+当前文档集中没有匹配目标的交叉引用，
+将在中配置的文档集中查找
+：confval：`intersphinx_mapping`（这需要访问URL才能
+下载有效目标列表）。Intersphinx也适用于其他
+：term：`domain` \的角色包括``：ref：``，但是它不适用于
+``：doc：``，因为这是非域角色。
+
+|更多| 请参阅：mod：`sphinx.ext.intersphinx`以获取有关的完整说明
+狮身人面像的特征。
+
+
+更多主题将涉及
+-------------------------
+
+-：doc：`其他扩展名</ usage / extensions / index>`：
+-静态文件
+-：doc：`选择主题</ usage / theming>`
+-：doc：`/用法/高级/ setuptools`
+-：ref：`模板化<templating>`
+-使用扩展
+写扩展<dev-extensions>
+
+
+..专栏::脚注
+
+.. [＃]这是通常的布局。但是，：file：`conf.py`也可以存在
+       另一个目录：配置目录。请参阅
+       ：doc：`sphinx-build手册页</ man / sphinx-build>`了解更多信息。
+
+.. |更多| 图片：： / _ static / more.png
+          ：align：中
+          ：alt：更多信息

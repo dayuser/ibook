@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>克隆git仓库到本地 &mdash; ibook 0.1 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> ibook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">H1 – Top of Page Header</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">ibook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1.html">ceshi</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ibook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>克隆git仓库到本地</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/data/python_data/sphinx_md.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="git">
+<h1>克隆git仓库到本地<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitee</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dayuser</span><span class="o">/</span><span class="n">ibook</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="section" id="python-python3-7-3">
+<h2>安装python依赖包 基于python3.7.3<a class="headerlink" href="#python-python3-7-3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">sphinx</span> <span class="n">sphinx_rtd_theme</span> <span class="n">recommonmark</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">markdown</span><span class="o">-</span><span class="n">tables</span> <span class="n">sphinxemoji</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">simple</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sphinx">
+<h2>初始化Sphinx<a class="headerlink" href="#sphinx" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 进入Git根目录</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">ibook</span>
+<span class="c1"># 开始快速配置sphinx</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+
+<span class="c1"># 选择把源文件和删除文件分开（y）</span>
+<span class="o">&gt;</span> <span class="n">Separate</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">directories</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span><span class="n">y</span>
+<span class="c1"># 项目名称</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">name</span><span class="p">:</span> <span class="n">ibook</span>
+<span class="c1"># 作者姓名</span>
+<span class="o">&gt;</span> <span class="n">Author</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="n">Tsanfer</span>
+<span class="c1"># 版本号</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">release</span> <span class="p">[]:</span> <span class="mf">0.2</span>
+<span class="c1"># 语言</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">language</span> <span class="p">[</span><span class="n">en</span><span class="p">]:</span> <span class="n">zh_CN</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>验证配置是否正确：<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">ibook</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-index-html">
+<h1>浏览器打开<code class="docutils literal notranslate"><span class="pre">./build/index.html</span></code>查看<a class="headerlink" href="#build-index-html" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>配置Sphinx主题，插件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+<div class="section" id="source-conf-py">
+<h1>配置<code class="docutils literal notranslate"><span class="pre">./source/conf.py</span></code>配置文件：<a class="headerlink" href="#source-conf-py" title="永久链接至标题">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- General configuration ---------------------------------------------------</span>
+
+<span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;recommonmark&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sphinx_markdown_tables&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sphinxemoji.sphinxemoji&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># -- Options for HTML output -------------------------------------------------</span>
+
+<span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="c1">#</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+
+<span class="c1"># The master toctree document.</span>
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, lbk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

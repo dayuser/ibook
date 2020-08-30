@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ibook &#8212; ibook 0.1 文档</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/getting_started.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/pandas.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="getting_started/index.html">入门指南</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="user_guide/index.html">用户指南</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="reference/index.html">参考</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="development/index.html">开发指南</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="whatsnew/index.html">更新内容</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#description" class="nav-link">Description</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#software-architecture" class="nav-link">Software Architecture</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#installation" class="nav-link">Installation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#instructions" class="nav-link">Instructions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#contribution" class="nav-link">Contribution</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#gitee-feature" class="nav-link">Gitee Feature</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="ibook">
+<h1>ibook<a class="headerlink" href="#ibook" title="永久链接至标题">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="永久链接至标题">¶</a></h2>
+<p>博客</p>
+</div>
+<div class="section" id="software-architecture">
+<h2>Software Architecture<a class="headerlink" href="#software-architecture" title="永久链接至标题">¶</a></h2>
+<p>Software architecture description</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="永久链接至标题">¶</a></h2>
+<ol class="simple">
+<li><p>xxxx</p></li>
+<li><p>xxxx</p></li>
+<li><p>xxxx</p></li>
+</ol>
+</div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="永久链接至标题">¶</a></h2>
+<ol class="simple">
+<li><p>xxxx</p></li>
+<li><p>xxxx</p></li>
+<li><p>xxxx</p></li>
+</ol>
+</div>
+<div class="section" id="contribution">
+<h2>Contribution<a class="headerlink" href="#contribution" title="永久链接至标题">¶</a></h2>
+<ol class="simple">
+<li><p>Fork the repository</p></li>
+<li><p>Create Feat_xxx branch</p></li>
+<li><p>Commit your code</p></li>
+<li><p>Create Pull Request</p></li>
+</ol>
+</div>
+<div class="section" id="gitee-feature">
+<h2>Gitee Feature<a class="headerlink" href="#gitee-feature" title="永久链接至标题">¶</a></h2>
+<ol class="simple">
+<li><p>You can use Readme_XXX.md to support different languages, such as Readme_en.md, Readme_zh.md</p></li>
+<li><p>Gitee blog <a class="reference external" href="https://blog.gitee.com">blog.gitee.com</a></p></li>
+<li><p>Explore open source project <a class="reference external" href="https://gitee.com/explore">https://gitee.com/explore</a></p></li>
+<li><p>The most valuable open source project <a class="reference external" href="https://gitee.com/gvp">GVP</a></p></li>
+<li><p>The manual of Gitee <a class="reference external" href="https://gitee.com/help">https://gitee.com/help</a></p></li>
+<li><p>The most popular members  <a class="reference external" href="https://gitee.com/gitee-stars/">https://gitee.com/gitee-stars/</a></p></li>
+</ol>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, lbk.<br/>
+        由 <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 创建。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
